@@ -73,6 +73,7 @@
     "edition": "octane"
   },
   "ember-addon": {
-    "configPath": "tests/dummy/config"
+    "configPath": "tests/dummy/config",
+    "demoURL": "https://ollar.github.io/ember-popup-component/"
   }
 }
