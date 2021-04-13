@@ -1,7 +1,7 @@
 ember-popup-component
 ==============================================================================
 
-[Short description of the addon.]
+Simple popup/dropdown component for ember.js (no styles, no libs).
 
 
 Compatibility
@@ -23,7 +23,31 @@ ember install ember-popup-component
 Usage
 ------------------------------------------------------------------------------
 
-[Longer description of how to use the addon in apps.]
+```
+<Popup class='x-left y-bottom' as |Popup|>
+    <Popup.Trigger title="trigger">
+        TRIGGER
+    </Popup.Trigger>
+
+    <Popup.Content>
+        CONTENT
+    </Popup.Content>
+</Popup>
+```
+
+where returned `Popup` is a hash of:
+`Trigger` {element} - toggles popup show/hide.
+`Content` {element} - wrapper over popup content.
+`Modal` {element} - wrapper over popup content with class `modal`;
+`opened` {boolean} - popup opened state
+`openPopup` {function} - open popup function
+`closePopup` {function} - close popup function
+`togglePopup` {function} - toggle popup function
+`contentEl` {HTMLElement} - reference to popup's content element
+`triggerEl` {HTMLElement} - reference to popup's trigger element
+
+There are optional CSS classes to manage popup's content position:
+`['x-left', 'x-center', 'x-right', 'y-top', 'y-center', 'y-bottom']`
 
 
 Contributing
