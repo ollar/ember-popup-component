@@ -1,9 +1,10 @@
 {
   "name": "ember-popup-component",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Simple popup component for emberjs",
   "keywords": [
-    "ember-addon", "component"
+    "ember-addon",
+    "component"
   ],
   "repository": "github:ollar/ember-popup-component",
   "license": "MIT",
