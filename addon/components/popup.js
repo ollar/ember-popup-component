@@ -25,9 +25,13 @@ export default class PopupComponent extends Component {
     @action
     openPopup() {
         this.opened = true;
-        later(this, function () {
-            window.addEventListener('click', this.closeOnClickOutside);
-        }, 100);
+        later(
+            this,
+            function () {
+                window.addEventListener('click', this.closeOnClickOutside);
+            },
+            100
+        );
     }
 
     @action
