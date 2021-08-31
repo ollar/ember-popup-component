@@ -21,6 +21,9 @@ module('Integration | Component | popup/content', function (hooks) {
 
         await click('button');
 
-        assert.equal(this.element.querySelector('.dropdown').textContent.trim(), 'template block text');
+        assert.equal(
+            this.element.querySelector('.dropdown').textContent.trim(),
+            'template block text'
+        );
     });
 });

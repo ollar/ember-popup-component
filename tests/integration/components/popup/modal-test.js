@@ -7,7 +7,7 @@ module('Integration | Component | popup/modal', function (hooks) {
     setupRenderingTest(hooks);
 
     test('it renders', async function (assert) {
-        this.set('content', 'content text')
+        this.set('content', 'content text');
         // Template block usage:
         await render(hbs`
             <Popup as |popup|>
@@ -22,6 +22,9 @@ module('Integration | Component | popup/modal', function (hooks) {
 
         await click('button');
 
-        assert.equal(this.element.querySelector('.modal').textContent.trim(), this.content);
+        assert.equal(
+            this.element.querySelector('.modal').textContent.trim(),
+            this.content
+        );
     });
 });

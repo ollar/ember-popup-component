@@ -9,8 +9,15 @@ module('Unit | Utility | click-outside-el', function (hooks) {
 
     // TODO: Replace this with your real tests.
     test('it works', async function (assert) {
+        assert.expect(2);
+
         this.set('clickHandler', (e) => {
-            assert.ok(clickOutsideEl(e.target, this.element.querySelector('.outsider')));
+            assert.ok(
+                clickOutsideEl(
+                    e.target,
+                    this.element.querySelector('.outsider')
+                )
+            );
             assert.notOk(clickOutsideEl(e.target, this.element));
         });
         await render(hbs`

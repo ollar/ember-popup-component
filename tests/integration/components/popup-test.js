@@ -8,8 +8,14 @@ module('Integration | Component | popup', function (hooks) {
 
     hooks.beforeEach(function () {
         this.set('trigger', 'trigger');
-        this.set('content', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat blandit aliquam etiam erat velit scelerisque in dictum. Nulla aliquet enim tortor at auctor urna nunc id. Neque laoreet suspendisse interdum consectetur libero. Nulla malesuada pellentesque elit eget.');
-        this.set('modal', 'Duis ultricies lacus sed turpis tincidunt. Libero id faucibus nisl tincidunt eget nullam non nisi. Natoque penatibus et magnis dis parturient montes nascetur ridiculus. Vitae sapien pellentesque habitant morbi tristique senectus et. Mattis enim ut tellus elementum sagittis vitae et leo duis. Etiam tempor orci eu lobortis elementum nibh tellus. Quis viverra nibh cras pulvinar mattis nunc. Odio pellentesque diam volutpat commodo sed. Congue mauris rhoncus aenean vel elit scelerisque. At auctor urna nunc id cursus metus aliquam eleifend. Nibh mauris cursus mattis molestie a iaculis at.');
+        this.set(
+            'content',
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat blandit aliquam etiam erat velit scelerisque in dictum. Nulla aliquet enim tortor at auctor urna nunc id. Neque laoreet suspendisse interdum consectetur libero. Nulla malesuada pellentesque elit eget.'
+        );
+        this.set(
+            'modal',
+            'Duis ultricies lacus sed turpis tincidunt. Libero id faucibus nisl tincidunt eget nullam non nisi. Natoque penatibus et magnis dis parturient montes nascetur ridiculus. Vitae sapien pellentesque habitant morbi tristique senectus et. Mattis enim ut tellus elementum sagittis vitae et leo duis. Etiam tempor orci eu lobortis elementum nibh tellus. Quis viverra nibh cras pulvinar mattis nunc. Odio pellentesque diam volutpat commodo sed. Congue mauris rhoncus aenean vel elit scelerisque. At auctor urna nunc id cursus metus aliquam eleifend. Nibh mauris cursus mattis molestie a iaculis at.'
+        );
     });
 
     test('it renders', async function (assert) {
@@ -45,10 +51,14 @@ module('Integration | Component | popup', function (hooks) {
 
         await click('button');
 
-        assert.equal(this.element.querySelector('.dropdown').textContent.trim(), this.content);
+        assert.equal(
+            this.element.querySelector('.dropdown').textContent.trim(),
+            this.content
+        );
     });
 
     test('clicking twice on trigger shows and hides content', async function (assert) {
+        assert.expect(20);
         // Template block usage:
         await render(hbs`
             <Popup class='x-left y-bottom' as |popup|>
@@ -63,7 +73,10 @@ module('Integration | Component | popup', function (hooks) {
 
         for (var i = 0; i < 10; i++) {
             await click('button');
-            assert.equal(this.element.querySelector('.dropdown').textContent.trim(), this.content);
+            assert.equal(
+                this.element.querySelector('.dropdown').textContent.trim(),
+                this.content
+            );
 
             await click('button');
             assert.equal(this.element.querySelector('.dropdown'), null);
@@ -71,6 +84,7 @@ module('Integration | Component | popup', function (hooks) {
     });
 
     test('clicking twice on trigger shows and hides modal', async function (assert) {
+        assert.expect(20);
         // Template block usage:
         await render(hbs`
             <Popup class='x-left y-bottom' as |popup|>
@@ -85,7 +99,10 @@ module('Integration | Component | popup', function (hooks) {
 
         for (var i = 0; i < 10; i++) {
             await click('button');
-            assert.equal(this.element.querySelector('.modal').textContent.trim(), this.content);
+            assert.equal(
+                this.element.querySelector('.modal').textContent.trim(),
+                this.content
+            );
 
             await click('button');
             assert.equal(this.element.querySelector('.modal'), null);
