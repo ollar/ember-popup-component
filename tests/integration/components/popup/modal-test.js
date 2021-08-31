@@ -1,26 +1,27 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
-import { render } from '@ember/test-helpers';
+import { render, click } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 
 module('Integration | Component | popup/modal', function (hooks) {
     setupRenderingTest(hooks);
 
     test('it renders', async function (assert) {
-        // Set any properties with this.set('myProperty', 'value');
-        // Handle any actions with this.set('myAction', function(val) { ... });
-
-        await render(hbs`<Popup::Modal />`);
-
-        assert.equal(this.element.textContent.trim(), '');
-
+        this.set('content', 'content text')
         // Template block usage:
         await render(hbs`
-      <Popup::Modal>
-        template block text
-      </Popup::Modal>
-    `);
+            <Popup as |popup|>
+                <popup.Trigger>
+                    trigger
+                </popup.Trigger>
+                <popup.Modal>
+                    {{this.content}}
+                </popup.Modal>
+            </Popup>
+        `);
 
-        assert.equal(this.element.textContent.trim(), 'template block text');
+        await click('button');
+
+        assert.equal(this.element.querySelector('.modal').textContent.trim(), this.content);
     });
 });

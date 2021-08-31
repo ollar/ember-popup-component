@@ -1,3 +1,5 @@
+[![Lint and Test](https://github.com/ollar/ember-popup-component/actions/workflows/test_lint.js.yml/badge.svg)](https://github.com/ollar/ember-popup-component/actions/workflows/test_lint.js.yml)
+
 ember-popup-component
 ==============================================================================
 
@@ -24,14 +26,14 @@ Usage
 ------------------------------------------------------------------------------
 
 ```
-<Popup class='x-left y-bottom' as |Popup|>
-    <Popup.Trigger title="trigger">
+<Popup class='x-left y-bottom' as |popup|>
+    <popup.Trigger title="trigger">
         TRIGGER
-    </Popup.Trigger>
+    </popup.Trigger>
 
-    <Popup.Content>
+    <popup.Content>
         CONTENT
-    </Popup.Content>
+    </popup.Content>
 </Popup>
 ```
 
