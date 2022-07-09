@@ -22,7 +22,7 @@ module('Integration | Component | popup/modal', function (hooks) {
 
         await click('button');
 
-        assert.equal(
+        assert.strictEqual(
             this.element.querySelector('.modal').textContent.trim(),
             this.content
         );

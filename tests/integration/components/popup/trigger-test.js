@@ -15,6 +15,6 @@ module('Integration | Component | popup/trigger', function (hooks) {
             </Popup>
         `);
 
-        assert.equal(this.element.textContent.trim(), 'trigger');
+        assert.strictEqual(this.element.textContent.trim(), 'trigger');
     });
 });

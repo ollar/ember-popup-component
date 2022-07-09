@@ -1,29 +1,25 @@
 [![Lint and Test](https://github.com/ollar/ember-popup-component/actions/workflows/test_lint.js.yml/badge.svg)](https://github.com/ollar/ember-popup-component/actions/workflows/test_lint.js.yml)
 
-ember-popup-component
-==============================================================================
+# ember-popup-component
 
 Simple popup/dropdown component for ember.js (no styles, no libs).
 
 
-Compatibility
-------------------------------------------------------------------------------
+## Compatibility
 
-* Ember.js v3.20 or above
-* Ember CLI v3.20 or above
+* Ember.js v3.24 or above
+* Ember CLI v3.24 or above
 * Node.js v12 or above
 
 
-Installation
-------------------------------------------------------------------------------
+## Installation
 
 ```
 ember install ember-popup-component
 ```
 
 
-Usage
-------------------------------------------------------------------------------
+## Usage
 
 ```
 <Popup class='x-left y-bottom' as |popup|>
@@ -53,13 +49,11 @@ There are optional CSS classes to manage popup's content position:
 `['x-left', 'x-center', 'x-right', 'y-top', 'y-center', 'y-bottom']`
 
 
-Contributing
-------------------------------------------------------------------------------
+## Contributing
 
 See the [Contributing](CONTRIBUTING.md) guide for details.
 
 
-License
-------------------------------------------------------------------------------
+## License
 
 This project is licensed under the [MIT License](LICENSE.md).

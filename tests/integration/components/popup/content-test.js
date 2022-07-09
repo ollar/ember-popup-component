@@ -21,7 +21,7 @@ module('Integration | Component | popup/content', function (hooks) {
 
         await click('button');
 
-        assert.equal(
+        assert.strictEqual(
             this.element.querySelector('.dropdown').textContent.trim(),
             'template block text'
         );

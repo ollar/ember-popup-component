@@ -1,15 +1,15 @@
 <div class="popup-wrapper {{if this.opened 'popup-wrapper--opened' 'popup-wrapper--closed'}}" ...attributes>
-    {{yield (hash
-            Trigger=(component this.popupTrigger saveTriggerRef=this.saveTriggerRef togglePopup=this.togglePopup)
-            Content=(component this.popupContent saveContentRef=this.saveContentRef bindEvents=this.bindEvents unbindEvents=this.unbindEvents)
-            Modal=(component this.modalContent saveContentRef=this.saveContentRef bindEvents=this.bindEvents unbindEvents=this.unbindEvents)
+  {{yield (hash
+      Trigger=(component this.popupTrigger saveTriggerRef=this.saveTriggerRef togglePopup=this.togglePopup)
+      Content=(component this.popupContent saveContentRef=this.saveContentRef bindEvents=this.bindEvents unbindEvents=this.unbindEvents)
+      Modal=(component this.modalContent saveContentRef=this.saveContentRef bindEvents=this.bindEvents unbindEvents=this.unbindEvents)
 
-            opened=this.opened
-            openPopup=this.openPopup
-            closePopup=this.closePopup
-            togglePopup=this.togglePopup
+      opened=this.opened
+      openPopup=this.openPopup
+      closePopup=this.closePopup
+      togglePopup=this.togglePopup
 
-            contentEl=this.contentEl
-            triggerEl=this.triggerEl
-    )}}
+      contentEl=this.contentEl
+      triggerEl=this.triggerEl
+  )}}
 </div>

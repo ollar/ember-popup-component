@@ -24,7 +24,7 @@ module('Integration | Component | popup', function (hooks) {
 
         await render(hbs`<Popup />`);
 
-        assert.equal(this.element.textContent.trim(), '');
+        assert.strictEqual(this.element.textContent.trim(), '');
 
         // Template block usage:
         await render(hbs`
@@ -33,7 +33,10 @@ module('Integration | Component | popup', function (hooks) {
             </Popup>
         `);
 
-        assert.equal(this.element.textContent.trim(), 'template block text');
+        assert.strictEqual(
+            this.element.textContent.trim(),
+            'template block text'
+        );
     });
 
     test('clicking on trigger shows content', async function (assert) {
@@ -51,7 +54,7 @@ module('Integration | Component | popup', function (hooks) {
 
         await click('button');
 
-        assert.equal(
+        assert.strictEqual(
             this.element.querySelector('.dropdown').textContent.trim(),
             this.content
         );
@@ -73,13 +76,13 @@ module('Integration | Component | popup', function (hooks) {
 
         for (var i = 0; i < 10; i++) {
             await click('button');
-            assert.equal(
+            assert.strictEqual(
                 this.element.querySelector('.dropdown').textContent.trim(),
                 this.content
             );
 
             await click('button');
-            assert.equal(this.element.querySelector('.dropdown'), null);
+            assert.strictEqual(this.element.querySelector('.dropdown'), null);
         }
     });
 
@@ -99,13 +102,13 @@ module('Integration | Component | popup', function (hooks) {
 
         for (var i = 0; i < 10; i++) {
             await click('button');
-            assert.equal(
+            assert.strictEqual(
                 this.element.querySelector('.modal').textContent.trim(),
                 this.content
             );
 
             await click('button');
-            assert.equal(this.element.querySelector('.modal'), null);
+            assert.strictEqual(this.element.querySelector('.modal'), null);
         }
     });
 });
